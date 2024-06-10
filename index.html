@@ -1,0 +1,332 @@
+<!doctype html>
+
+<html>
+	
+<head>
+	
+<!--The following displays language used in browser to interpret page -->
+<meta charset="UTF-8">
+
+<!--The following line of code displays the page title on a browser tab -->
+<title>Work Hard Play Hard | Home</title>
+
+<!--link tags are for linking to external files, in this case your CSS stylesheet-->
+<link href="style.css" rel="stylesheet" type="text/css">
+	
+<!--link tags are for linking to external files, in this case a special CSS stylesheet-->
+<link href="normalize.css" rel="stylesheet" type="text/css">
+
+<!--the following tag tells the browser to adjust the site according to screen size-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--The following code links to the jquery library -->
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
+<!--The following code links to the javascript file that runs the slideshow -->	
+<script type="text/javascript" src="js/jquery.cycle2.min.js"></script>
+    
+<!--The following code links to the javascript file that runs the parallax image -->    
+<script src="js/parallax.min.js"></script>
+	
+<!--The following code links to Google Fonts-->
+<link href="https://fonts.googleapis.com/css?family=Raleway:900|Rubik" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	
+<!--The following javscript runs the jquery slideshow -->
+<script type="text/javascript">
+$('#slider').cycle({});
+</script>
+
+<!--The following javascript runs the nav bar which disappears on scroll-->
+<script type="text/javascript">
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+</script>
+    
+<!--Favicon - images are in a folder called 'fav'-->
+    <!--The following adds favicon images -- be sure to verify paths-->
+
+<link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+<link rel="manifest" href="img/fav/site.webmanifest">
+<link rel="mask-icon" href="img/fav/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!--End Favicon-->
+    
+<!--back to top button-->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}    
+</script>   
+</head>
+
+<body>
+
+<!--beginning of navigation section-->
+<header>
+<div class="nav-container">
+<div class="brand"><img src="img/logo.png" width="190" height="75" alt=""/></div>
+<nav>
+<div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+  <ul class="nav-list">
+        <li>
+          <a href="#home">Home</a>
+        </li>
+	   <li>
+          <a href="#gal">Yoga Class</a>
+		  </li>
+	  	<li>
+          <a href="#tl">Fav Place in SLO</a>
+        </li>
+        <li>
+          <a href="#vid">Day in the Life</a>
+			</li>
+      <li>
+          <a href="#num">Cal Poly ASI</a>
+			</li>
+      </ul>
+</nav>
+</div>
+<!--closing navigation tag-->
+</header>
+<!--end of navigation section-->
+    
+<!--main image-->
+<div class="container">
+</div>
+<!--animated welcome-->
+<div class="wrapper">
+<!--animated welcome code here-->	
+</div>
+    
+<!--beginning of main content area-->
+<div class="row whiteBG">
+<h2 id="home">Work Hard Play Hard</h2>
+<article>
+<p class="tab">Welcome to my Website!<br><br>Ava Baker</p>
+<p class="tab"><a href="#gal">Click Here!</a></p>
+</article>
+</div>
+
+<!--beginning of slideshow section-->
+<div class="row blueBG"><!--beginning of row-->
+<h2 id="gal">Meaning Behind a Yoga Class</h2>
+<article><!--beginning of article-->
+<p class="tab">Dive Deeper into what yoga really means to students at Cal Poly SLO. Watch these students practice uniqie poses, set intentions, and practice mediation. </p>
+<!--beginning of slideshow-->
+<div id="slider"
+data-cycle-caption="#alt-caption"
+data-cycle-caption-template="{{alt}}"
+data-cycle-fx="scrollHorz"
+data-cycle-pause-on-hover="true"
+data-cycle-speed="200">
+<div class="cycle-prev"></div>
+<div class="cycle-next"></div>
+<img src="img/1.jpg" width="100%" height="100%" alt="Pismo, California | April 20, 2024 | Daphne Ruffier, Megan Rutman, Gabby Gerkin, and Bella Gerkin, all in their third year at Cal Poly in the Journalism and Communications department, unite for a mindful yoga session by the waters edge. As the sun sets high on the horizon, Daphne settles in and begins the class: “The opening stretch is the most essential part of yoga. I like to set my intentions and focus on my breathing before I begin.” "/>
+<img src="img/2.jpg" width="100%" height="100%" alt="Pismo, California | April 20, 2024 | Cal Poly third year Communication majors, Megan Rutman, Gabby Gerkin, and Bella Gerkin embrace the art of setting intentions and practicing mindfulness through yoga. As students navigating busy schedules, they find solace and connection in this serene practice. Gabby shares her insight: 'I practice mindfulness every day regardless of how busy my schedule is and have noticed a positive impact on my mental health."/>
+<img src="img/3.jpg" width="100%" height="100%" alt="Pismo, California | April 20, 2024 | Megan Rutman, Gabby Gerkin, and Bella Gerkin smile in unison, their hands raised up as they stretch towards the sky engaging in the transformative practice of yoga. Although they struggle with the rigors of student life, they find peace and joy staying active off campus. Megan Rutman stated, “yoga outside boosts serotonin levels and melts away stress."/>
+<img src="img/4.jpg" width="100%" height="100%" alt="Pismo, California | April 20, 2024 | As third year Journalism major, Daphne Ruffier, leads the group into a collective pose, the spirits of those around her are lifted high. Through the practice of yoga, Daphne displays the innate connection between friendship and mindful moving. 
+"/>
+<img src="img/5.jpg" width="100%" height="100%" alt="Pismo, California | April 20, 2024 | Cal Poly students Megan Rutman, Gabby Gerkin, and Bella Gerkin practice the esteemed motto “learn by doing” as they learn a new yoga pose. 
+"/>
+<img src="img/6.jpg" width="100%" height="100%" alt="Pismo, California | April 20, 2024 | Cal Poly third year Communication student, Megan Rutman, pauses her workout to get a sip of water. Megan said, “Like with any task, taking breaks can benefit your overall performance.”
+"/>
+<img src="img/7.jpg" width="100%" height="100%" alt="Pismo, California | April 20, 2024 | Third year Communications major, Bella Gerkin, is practicing her favorite yoga pose, embodying strength and resilience. Bella shares, “Yoga is my sanctuary, a steadfast companion on even the toughest days. I like its ability to ground me, no matter where I am.” 
+"/>
+<img src="img/8.jpg" width="100%" height="100%" alt="Pismo, California | April 20, 2024 | Third year Communications major, Gabby Gerkin, practices the Happy Baby pose with an unforgettable smile on her face. This is a staple yoga pose that stretches legs, hands, and feet."/>
+<img src="img/9.jpg" width="100%" height="100%" alt="Pismo, California | April 20, 2024 | Daphne Ruffier leads the group in a closing stretch. She emphasizes the importance of releasing negative feelings as the class comes to a close. With the sun setting on the horizon, the yoga class has run its course and this group of friends has enjoyed an unforgettable bonding experience.  
+"/>
+<img src="img/10.jpg" width="100%" height="100%" alt="Pismo, California | April 20, 2024 | The tight knit group of friends stride towards the car, their spirits lifted and bodies rejuvenated from the yoga session. Today's class was a reminder of the power of mindful movement and how  it can be easily integrated into busy schedules."/>
+</div><!--end of slideshow-->
+<!--beginning of slideshow caption-->
+<div id="alt-caption" class="center">
+</div><!--end of slideshow caption-->
+<p class="tab"><a href="#tl">Yoga Class</a></p>
+</article><!--end of article-->
+</div><!--end of row-->
+<!--end of slideshow section-->
+	
+<!--beginning of audio section-->
+<div class="row whiteBG">
+<h2 id="tl">What is your go to place in SlO</h2>
+<article>
+  <p class="tab">Click on images to hear unique places students love...<br>(Double-click to pause audio)</p>
+  <div class="table">
+	<div id="trip">
+<audio id="audio_1">
+    <source src="audio/1.mp3" type="audio/mpeg" />
+</audio>        
+<audio id="audio_2">
+    <source src="audio/2.mp3" type="audio/mpeg" />
+</audio>        
+<audio id="audio_3">
+	<source src="audio/3.mp3" type="audio/mpeg" />
+</audio>
+        
+<img src="img/rollover/1.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/1.jpg'" onMouseOut="this.src='img/rollover/1.gif'" onClick="document.getElementById('audio_1').play(); return false;" onDblClick="document.getElementById('audio_1').pause(); return false;">
+ /&gt; 
+            
+<img src="img/rollover/2.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/2.jpg'" onMouseOut="this.src='img/rollover/2.gif'" onClick="document.getElementById('audio_2').play(); return false;" onDblClick="document.getElementById('audio_2').pause(); return false;">
+ /&gt;
+            
+<img src="img/rollover/3.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/3.jpg'" onMouseOut="this.src='img/rollover/3.gif'" onClick="document.getElementById('audio_3').play(); return false;" onDblClick="document.getElementById('audio_3').pause(); return false;">
+/&gt;
+	</div>
+</div>
+<p class="tab"><a href="#vid">Fav Place in SLO</a></p>		
+</article>
+</div>
+<!--end of audio section-->
+    
+<!--beginning of parallax image-->
+<div class="parallax" data-parallax="scroll" data-bleed="10" data-speed="0.2" iosFix="true" data-image-src="img/parallax.jpg">
+</div>
+<!--end of parallax image-->
+
+<!--beginning of video section-->
+<div class="row orangeBG">
+<h2 id="vid">Day in the Life</h2>
+<article>
+<p class="tab">Bridget Yocham, Third Year Business Major tells how she balences school and activities</p>	
+<video width="100%" height="100%" poster="img/poster.jpg" controls>
+<source src="img/video.mp4" type="video/mp4">
+   <!--begginning of a new sction-->
+<div class="row">
+<h1 id="vid">Video</h1>
+<article>
+<p class="tab">Text goes here</p>
+<video width="100%"height="100%" poster="img/poster.jpg" controls>
+<source src="img/mov2.mp4" type="video/mp4">
+Your browser does not support this video tag.
+</video>
+</article>
+</div>
+    </video>
+    </article>
+    </div>
+<!--end of video section-->
+
+<!--beginning of infographic section-->
+<div class="row whiteBG">
+<h2 id="num">ASI </h2>
+<article>
+<p class="tab">ASI on Campus</p>
+<!--infographic embed code here-->
+   <div class="infogram-embed" data-id="d78a298c-cfd1-4ce9-bf18-d24035c5331c" data-type="interactive" data-title="Ocean Sand"></div><script>!function(e,n,i,s){var d="InfogramEmbeds";var o=e.getElementsByTagName(n)[0];if(window[d]&&window[d].initialized)window[d].process&&window[d].process();else if(!e.getElementById(i)){var r=e.createElement(n);r.async=1,r.id=i,r.src=s,o.parentNode.insertBefore(r,o)}}(document,"script","infogram-async","https://e.infogram.com/js/dist/embed-loader-min.js");</script><div style="padding:8px 0;font-family:Arial!important;font-size:13px!important;line-height:15px!important;text-align:center;border-top:1px solid #dadada;margin:0 30px"><a href="https://infogram.com/d78a298c-cfd1-4ce9-bf18-d24035c5331c" style="color:#989898!important;text-decoration:none!important;" target="_blank">Ocean Sand</a><br><a href="https://infogram.com" style="color:#989898!important;text-decoration:none!important;" target="_blank" rel="nofollow">Infogram</a></div>
+<!--end of infographic section-->
+	
+<!--beginning of footer-->
+<footer>Work Hard Play Hard | San Luis Obispo, CA
+    |Ava Baker Copyright 2024 avabak13@gmail.com
+<a href="mailto: email@email.com?Subject=Inquiry"
+                                 </footer>
+<!--end of footer-->
+	
+</body>
+	
+<!--the following script controls the responsive navigation-->
+<script>
+	(function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
+	</script>
+	<script>
+	var headertext = [];
+var headers = document.querySelectorAll("#miyazaki th"),
+tablerows = document.querySelectorAll("#miyazaki th"),
+tablebody = document.querySelector("#miyazaki tbody");
+for(var i = 0; i < headers.length; i++) {
+	var current = headers[i];
+	headertext.push( current.textContent.replace( /\r?\n|\r/,"") );
+}
+for (var i = 0, row; row = tablebody.rows[i]; i++) {
+	for (var j = 0, col; col = row.cells[j]; j++) {
+		col.setAttribute("data-th", headertext[j]);
+	}
+}
+</script>
+	
+	<!----Prevents audio tracks from playing simultaneously---->
+<script>
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);
+    </script>
+</html>
